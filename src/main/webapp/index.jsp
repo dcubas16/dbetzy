@@ -2,7 +2,7 @@
 <c:redirect url="view/home.jsp"></c:redirect>
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Hello World! of my</h2>
 </body>
 </html>
 
