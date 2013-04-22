@@ -72,7 +72,7 @@
 		<div id="frameWrapper">
 			<iframe id="frame" frameborder="0"
 				src="http://static.livedemo00.template-help.com/wt_41287/"
-				style="height: 232px;"> [Your user agent does not support
+				style="height: 681px;"> [Your user agent does not support
 				frames or is currently configured not to display frames. However,
 				you may visit the related document.] </iframe>
 		</div>
@@ -96,9 +96,6 @@
 		width="1" border="0"
 		src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/990429972/?frame=0&amp;random=1366253351368&amp;cv=7&amp;fst=1366253351368&amp;num=1&amp;fmt=1&amp;label=dqtfCITasQQQlIaj2AM&amp;guid=ON&amp;u_h=768&amp;u_w=1360&amp;u_ah=738&amp;u_aw=1360&amp;u_cd=32&amp;u_his=1&amp;u_tz=-300&amp;u_java=true&amp;u_nplug=7&amp;u_nmime=10&amp;ref=http%3A//www.templatemonster.com/website-templates/41287.html&amp;url=http%3A//www.templatemonster.com/demo/41287.html&amp;frm=0&amp;data=pagetype%3Ddemo%3Bprodid%3D41287%3Bpname%3DWebsite%20Templates%3Bpcat%3DJewelry%2CJewelry%20Templates%3Bpvalue%3D69%3Bpsupertype%3DWeb%20Templates%3Bpfeatures%3DResponsive"
 		/&gt;</iframe>
-	
-
-
 
 	<div id="account_front_popup" style="top: 141.5px; left: 0px;">
 		<div id="account_popup_content">
