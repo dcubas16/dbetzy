@@ -1,348 +1,323 @@
+$(function() {
+	// IPad/IPhone
+	var viewportmeta = document.querySelector
+			&& document.querySelector('meta[name="viewport"]'), ua = navigator.userAgent,
 
-	$(function() {
-		// IPad/IPhone
-		var viewportmeta = document.querySelector
-				&& document.querySelector('meta[name="viewport"]'), ua = navigator.userAgent,
+	gestureStart = function() {
+		viewportmeta.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+	},
 
-		gestureStart = function() {
-			viewportmeta.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
-		},
-
-		scaleFix = function() {
-			if (viewportmeta && /iPhone|iPad/.test(ua)
-					&& !/Opera Mini/.test(ua)) {
-				viewportmeta.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
-				document.addEventListener("gesturestart", gestureStart, false);
-			}
-		};
-		scaleFix();
-	});
-
-	//function to fix height of iframe!
-	var calcHeight = function() {
-		var headerDimensions = $('#mainlivedemo').height();
-		var selector = ($('.stretched').length > 0) ? '#iframelive'
-				: '#iframelive iframe';
-		$(selector).height($(window).height() - headerDimensions);
-	}
-	$(document).ready(function() {
-		calcHeight();
-	});
-	$(window).resize(function() {
-		calcHeight();
-	}).load(function() {
-		calcHeight();
-	});
-
-	$(function() {
-		mobileCss = function() {
-			if (navigator.userAgent.match(/iPhone/i)
-					|| navigator.userAgent.match(/iPod/i)
-					|| navigator.userAgent.match(/iPad/i)
-					|| navigator.userAgent.match(/Android/i)
-					|| navigator.userAgent.match(/Opera Mini/)) {
-				$('body').css({
-					'height' : 'auto'
-				});
-				$('html').css({
-					'height' : 'auto'
-				});
-				$('#mainlivedemo').addClass('mobile');
-				//                    $('#frameWrapper').addClass('mobile');
-				//                    $('#iframelive iframe').addClass('mobile');
-			}
-		};
-		mobileCss();
-	});
-
-	function buy(id, checkout, ip, channel) {
-		var url = '/cart.php?add=' + id
-				+ '&PHPSESSID=4cdcaa6bdf68ef5b87bab7b0ec99db69';
-		var priceVariantElement = $('input[name=price_variant]:checked');
-		var offers = '';
-		$(
-				'#preview_page_offers li input:checkbox, #preview_page_offers_oncart li input:checkbox,  #template-preview-page li input:checkbox')
-				.each(function() {
-					var el = $(this);
-					var oid = el.val();
-					if ('installation' == oid) {
-						oid = el.attr('offer');
-					}
-					offers += ('' == offers ? '' : '&');
-					if (el.prop('checked')) {
-						offers += 'offers[]=' + oid;
-					} else {
-						offers += 'deloffers[]=' + oid;
-					}
-				});
-		$(
-				'#preview_page_offers .offers-data input, #template-preview-page .offers-data input')
-				.each(function() {
-					var el = $(this);
-					offers += ('' == offers ? '' : '&');
-					offers += el.attr('name') + '=' + el.val();
-				});
-
-		if ('undefined' != typeof priceVariantElement
-				&& priceVariantElement.length) {
-			url = url + "&price_variant=" + priceVariantElement.val();
+	scaleFix = function() {
+		if (viewportmeta && /iPhone|iPad/.test(ua) && !/Opera Mini/.test(ua)) {
+			viewportmeta.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+			document.addEventListener("gesturestart", gestureStart, false);
 		}
-		if ('' != offers) {
-			url += '&' + offers;
+	};
+	scaleFix();
+});
+
+// function to fix height of iframe!
+var calcHeight = function() {
+	var headerDimensions = $('#mainlivedemo').height();
+	var selector = ($('.stretched').length > 0) ? '#iframelive'
+			: '#iframelive iframe';
+	$(selector).height($(window).height() - headerDimensions);
+};
+
+$(document).ready(function() {
+	calcHeight();
+});
+
+$(window).resize(function() {
+	calcHeight();
+}).load(function() {
+	calcHeight();
+});
+
+$(function() {
+	mobileCss = function() {
+		if (navigator.userAgent.match(/iPhone/i)
+				|| navigator.userAgent.match(/iPod/i)
+				|| navigator.userAgent.match(/iPad/i)
+				|| navigator.userAgent.match(/Android/i)
+				|| navigator.userAgent.match(/Opera Mini/)) {
+			$('body').css({
+				'height' : 'auto'
+			});
+			$('html').css({
+				'height' : 'auto'
+			});
+			$('#mainlivedemo').addClass('mobile');
+			// $('#frameWrapper').addClass('mobile');
+			// $('#iframelive iframe').addClass('mobile');
 		}
-		$(
-				'#preview_page_offers li input[name^="offer_bundle_select["],#preview_page_offers_oncart li input[name^="offer_bundle_select["]')
-				.each(
-						function() {
-							url += '&' + $(this).attr('name') + '='
-									+ $(this).attr('value');
-						});
-		window.location.href = url
-				+ (('boolean' == typeof checkout) && checkout ? '&action=checkout'
-						: '')
-				+ (('boolean' == typeof ip) && ip ? '&ip=true' : '')
-				+ (('undefined' != typeof channel) ? '&channel=' + channel : '');
+	};
+	mobileCss();
+});
+
+function buy(id, checkout, ip, channel) {
+	var url = '/cart.php?add=' + id
+			+ '&PHPSESSID=4cdcaa6bdf68ef5b87bab7b0ec99db69';
+	var priceVariantElement = $('input[name=price_variant]:checked');
+	var offers = '';
+	$(
+			'#preview_page_offers li input:checkbox, #preview_page_offers_oncart li input:checkbox,  #template-preview-page li input:checkbox')
+			.each(function() {
+				var el = $(this);
+				var oid = el.val();
+				if ('installation' == oid) {
+					oid = el.attr('offer');
+				}
+				offers += ('' == offers ? '' : '&');
+				if (el.prop('checked')) {
+					offers += 'offers[]=' + oid;
+				} else {
+					offers += 'deloffers[]=' + oid;
+				}
+			});
+	$(
+			'#preview_page_offers .offers-data input, #template-preview-page .offers-data input')
+			.each(function() {
+				var el = $(this);
+				offers += ('' == offers ? '' : '&');
+				offers += el.attr('name') + '=' + el.val();
+			});
+
+	if ('undefined' != typeof priceVariantElement && priceVariantElement.length) {
+		url = url + "&price_variant=" + priceVariantElement.val();
 	}
-
-
-	(function() {
-		var s = document.createElement('script');
-		s.type = 'text/javascript';
-		s.async = true;
-		s.src = '//cdnprod.socialproof.it/widget/resource.js';
-		var x = document.getElementsByTagName('script')[0];
-		x.parentNode.insertBefore(s, x);
-	})();
-
-	window.spiAsyncInit = function() {
-		socialproofit.init("2097");
+	if ('' != offers) {
+		url += '&' + offers;
 	}
-
-	/* responsive-views script-selector */
-	$(document)
-			.ready(
+	$(
+			'#preview_page_offers li input[name^="offer_bundle_select["],#preview_page_offers_oncart li input[name^="offer_bundle_select["]')
+			.each(
 					function() {
-						if (!(navigator.userAgent.match(/iPhone/i)
-								|| navigator.userAgent.match(/iPod/i)
-								|| navigator.userAgent.match(/iPad/i)
-								|| navigator.userAgent.match(/Android/i) || navigator.userAgent
-								.match(/Opera Mini/))) {
+						url += '&' + $(this).attr('name') + '='
+								+ $(this).attr('value');
+					});
+	window.location.href = url
+			+ (('boolean' == typeof checkout) && checkout ? '&action=checkout'
+					: '') + (('boolean' == typeof ip) && ip ? '&ip=true' : '')
+			+ (('undefined' != typeof channel) ? '&channel=' + channel : '');
+}
 
-							var frame = document.getElementById('frame');
 
-							$('#iframelive').removeClass().addClass(
-									'dynamic_mode');
-							$('ul#responsivator').show();
+(function() {
+	var s = document.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = '//cdnprod.socialproof.it/widget/resource.js';
+	var x = document.getElementsByTagName('script')[0];
+	x.parentNode.insertBefore(s, x);
+})();
 
-							function widtherator(scrWid) {
-								$('ul#responsivator li').removeClass();
-								if (scrWid >= 1280) {
-									$('#desktop').removeClass().addClass(
-											'active');
-								}
-								if ((scrWid >= 1259) && (scrWid <= 1279)) {
-									$('#tablet-landscape').addClass('active');
-								}
-								if ((scrWid >= 916) && (scrWid <= 1258)) {
-									$('#tablet-portrait').addClass('active');
-								}
-								if ((scrWid >= 759) && (scrWid <= 915)) {
-									$('#iphone-landscape').addClass('active');
-								}
-								if (scrWid <= 758) {
-									$('#iphone-portrait').addClass('active');
-								}
+window.spiAsyncInit = function() {
+	socialproofit.init("2097");
+};
+
+/* responsive-views script-selector */
+$(document)
+		.ready(
+				function() {
+					if (!(navigator.userAgent.match(/iPhone/i)
+							|| navigator.userAgent.match(/iPod/i)
+							|| navigator.userAgent.match(/iPad/i)
+							|| navigator.userAgent.match(/Android/i) || navigator.userAgent
+							.match(/Opera Mini/))) {
+
+						var frame = document.getElementById('frame');
+
+						$('#iframelive').removeClass().addClass('dynamic_mode');
+						$('ul#responsivator').show();
+
+						function widtherator(scrWid) {
+							$('ul#responsivator li').removeClass();
+							if (scrWid >= 1280) {
+								$('#desktop').removeClass().addClass('active');
 							}
-
-							widtherator($(window).width());
-							$(window).resize(function() {
-								widtherator($(window).width());
-							});
-
-							$('ul#responsivator li')
-									.click(
-											function() {
-												$('ul#responsivator li')
-														.removeClass();
-												$(this).addClass('active');
-												var device = $(this).attr('id');
-												$('#iframelive').removeClass()
-														.addClass(device);
-												frame.src = frame.src;
-												$(window).unbind('resize');
-
-												if (device === 'desktop') {
-													$(window)
-															.resize(
-																	function() {
-																		if ($(
-																				window)
-																				.width() > 1280) {
-																			$(
-																					'#iframelive')
-																					.removeClass()
-																					.addClass(
-																							'dynamic_mode');
-																			frame.src = frame.src;
-																			$(
-																					window)
-																					.resize(
-																							function() {
-																								widtherator($(
-																										window)
-																										.width());
-																							})
-																		}
-																	});
-												} else {
-													$(window)
-															.resize(
-																	function() {
-																		if ((($(
-																				window)
-																				.width() - $(
-																				'#frameWrapper')
-																				.width()) > 50)
-																				&& (($(
-																						window)
-																						.width() - $(
-																						'#frameWrapper')
-																						.width()) < 100)) {
-																			$(
-																					'#iframelive')
-																					.removeClass()
-																					.addClass(
-																							'dynamic_mode');
-																			frame.src = frame.src;
-																			$(
-																					window)
-																					.resize(
-																							function() {
-																								widtherator($(
-																										window)
-																										.width());
-																							})
-																		}
-																	});
-												}
-
-											});
+							if ((scrWid >= 1259) && (scrWid <= 1279)) {
+								$('#tablet-landscape').addClass('active');
+							}
+							if ((scrWid >= 916) && (scrWid <= 1258)) {
+								$('#tablet-portrait').addClass('active');
+							}
+							if ((scrWid >= 759) && (scrWid <= 915)) {
+								$('#iphone-landscape').addClass('active');
+							}
+							if (scrWid <= 758) {
+								$('#iphone-portrait').addClass('active');
+							}
 						}
-					});
 
+						widtherator($(window).width());
+						$(window).resize(function() {
+							widtherator($(window).width());
+						});
 
-	try {
-		var _gaq = _gaq || [];
-		_gaq.push([ 'a._setAccount', 'UA-1217838-2' ]);
+						$('ul#responsivator li')
+								.click(
+										function() {
+											$('ul#responsivator li')
+													.removeClass();
+											$(this).addClass('active');
+											var device = $(this).attr('id');
+											$('#iframelive').removeClass()
+													.addClass(device);
+											frame.src = frame.src;
+											$(window).unbind('resize');
 
-		_gaq.push([ 'a._setDomainName', '.templatemonster.com' ]);
-		_gaq.push([ 'a._setAllowLinker', true ]);
-		_gaq.push([ 'a._setAllowHash', false ]);
+											if (device === 'desktop') {
+												$(window)
+														.resize(
+																function() {
+																	if ($(
+																			window)
+																			.width() > 1280) {
+																		$(
+																				'#iframelive')
+																				.removeClass()
+																				.addClass(
+																						'dynamic_mode');
+																		frame.src = frame.src;
+																		$(
+																				window)
+																				.resize(
+																						function() {
+																							widtherator($(
+																									window)
+																									.width());
+																						});
+																	}
+																});
+											} else {
+												$(window)
+														.resize(
+																function() {
+																	if ((($(
+																			window)
+																			.width() - $(
+																			'#frameWrapper')
+																			.width()) > 50)
+																			&& (($(
+																					window)
+																					.width() - $(
+																					'#frameWrapper')
+																					.width()) < 100)) {
+																		$(
+																				'#iframelive')
+																				.removeClass()
+																				.addClass(
+																						'dynamic_mode');
+																		frame.src = frame.src;
+																		$(
+																				window)
+																				.resize(
+																						function() {
+																							widtherator($(
+																									window)
+																									.width());
+																						});
+																	}
+																});
+											}
 
-		_gaq.push([ 'a._setSessionCookieTimeout', 180000000 ]);
-		_gaq.push([ 'a._setVisitorCookieTimeout', 63072000000 ]);
+										});
+					}
+				});
 
-		_gaq.push([ 'a._trackPageLoadTime' ]);
+try {
+	var _gaq = _gaq || [];
+	_gaq.push([ 'a._setAccount', 'UA-1217838-2' ]);
 
-		_gaq.push([ 'b._setAccount', 'UA-1217838-16' ]);
+	_gaq.push([ 'a._setDomainName', '.templatemonster.com' ]);
+	_gaq.push([ 'a._setAllowLinker', true ]);
+	_gaq.push([ 'a._setAllowHash', false ]);
 
-		_gaq.push([ 'b._setDomainName', '.templatemonster.com' ]);
-		_gaq.push([ 'b._setAllowLinker', true ]);
-		_gaq.push([ 'b._setAllowHash', false ]);
+	_gaq.push([ 'a._setSessionCookieTimeout', 180000000 ]);
+	_gaq.push([ 'a._setVisitorCookieTimeout', 63072000000 ]);
 
-		_gaq.push([ 'b._setSessionCookieTimeout', 180000000 ]);
-		_gaq.push([ 'b._setVisitorCookieTimeout', 63072000000 ]);
+	_gaq.push([ 'a._trackPageLoadTime' ]);
 
-		_gaq.push([ 'a._require', 'inpage_linkid',
-				'//www.google-analytics.com/plugins/ga/inpage_linkid.js' ]);
+	_gaq.push([ 'b._setAccount', 'UA-1217838-16' ]);
 
-		_gaq.push([ 'b._trackEvent', 'Time Spent', 'Server Generation',
-				'/demo/41287.html', 155 ]);
+	_gaq.push([ 'b._setDomainName', '.templatemonster.com' ]);
+	_gaq.push([ 'b._setAllowLinker', true ]);
+	_gaq.push([ 'b._setAllowHash', false ]);
 
-		_gaq.push([ 'a._trackPageview' ]);
-		_gaq.push([ 'b._trackPageview' ]);
-	} catch (err) {
-	}
+	_gaq.push([ 'b._setSessionCookieTimeout', 180000000 ]);
+	_gaq.push([ 'b._setVisitorCookieTimeout', 63072000000 ]);
 
-	/* Google analytics */
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl."
-			: "http://www.");
-	document
-			.write(unescape("%3Cscript src='"
-					+ gaJsHost
-					+ "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	_gaq.push([ 'a._require', 'inpage_linkid',
+			'//www.google-analytics.com/plugins/ga/inpage_linkid.js' ]);
 
+	_gaq.push([ 'b._trackEvent', 'Time Spent', 'Server Generation',
+			'/demo/41287.html', 155 ]);
 
-	/* <![CDATA[ */
-	var google_conversion_id = 990429972;
-	var google_conversion_label = "dqtfCITasQQQlIaj2AM";
-	var google_custom_params = {
-		"pagetype" : "demo",
-		"prodid" : 41287,
-		"pname" : "Website Templates",
-		"pcat" : [ "Jewelry", "Jewelry Templates" ],
-		"pvalue" : "69",
-		"psupertype" : "Web Templates",
-		"pfeatures" : "Responsive"
+	_gaq.push([ 'a._trackPageview' ]);
+	_gaq.push([ 'b._trackPageview' ]);
+} catch (err) {
+}
+
+/* Google analytics */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl."
+		: "http://www.");
+document
+		.write(unescape("%3Cscript src='"
+				+ gaJsHost
+				+ "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+/* <![CDATA[ */
+var google_conversion_id = 990429972;
+var google_conversion_label = "dqtfCITasQQQlIaj2AM";
+var google_custom_params = {
+	"pagetype" : "demo",
+	"prodid" : 41287,
+	"pname" : "Website Templates",
+	"pcat" : [ "Jewelry", "Jewelry Templates" ],
+	"pvalue" : "69",
+	"psupertype" : "Web Templates",
+	"pfeatures" : "Responsive"
+};
+var google_remarketing_only = true;
+
+/* ]]> */
+
+if (!NREUMQ.f) {
+	NREUMQ.f = function() {
+		NREUMQ.push([ "load", new Date().getTime() ]);
+		var e = document.createElement("script");
+		e.type = "text/javascript";
+		e.async = true;
+		e.src = "https://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
+		document.body.appendChild(e);
+		if (NREUMQ.a)
+			NREUMQ.a();
 	};
-	var google_remarketing_only = true;
+	NREUMQ.a = window.onload;
+	window.onload = NREUMQ.f;
+};
+NREUMQ.push([ "nrf2", "beacon-1.newrelic.com", "72d7dcce33", 242398,
+		"ZV1TZ0FTVkFVWkwKXlwXZEFaHUpXRUxdEEVtXFhAQ1NMUVxcSk1BWkg=", 0, 181,
+		new Date().getTime() ]);
 
-	/* ]]> */
+socialproofit.registerListener("widget_initialized", function() {
+	$("#spi-side-action-favoriting-counter").text(
+			socialproofit.listOptions().length);
+});
 
+socialproofit.registerListener("option_pre_create", function(data) {
 
-	if (!NREUMQ.f) {
-		NREUMQ.f = function() {
-			NREUMQ.push([ "load", new Date().getTime() ]);
-			var e = document.createElement("script");
-			e.type = "text/javascript";
-			e.async = true;
-			e.src = "https://d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js";
-			document.body.appendChild(e);
-			if (NREUMQ.a)
-				NREUMQ.a();
-		};
-		NREUMQ.a = window.onload;
-		window.onload = NREUMQ.f;
-	};
-	NREUMQ.push([ "nrf2", "beacon-1.newrelic.com", "72d7dcce33", 242398,
-			"ZV1TZ0FTVkFVWkwKXlwXZEFaHUpXRUxdEEVtXFhAQ1NMUVxcSk1BWkg=", 0,
-			181, new Date().getTime() ]);
+	if (data.is_one_item_token)
+		return;
+	$("#spi-side-action-favoriting-counter").text(
+			socialproofit.listOptions().length + 1);
+});
 
-	socialproofit
-			.registerListener(
-					"widget_initialized",
-					function() {
-						$(
-								"#spi-side-action-favoriting-counter")
-								.text(
-										socialproofit
-												.listOptions().length);
-					});
-
-	socialproofit
-			.registerListener(
-					"option_pre_create",
-					function(data) {
-
-						if (data.is_one_item_token)
-							return;
-						$(
-								"#spi-side-action-favoriting-counter")
-								.text(
-										socialproofit
-												.listOptions().length + 1);
-					});
-
-	socialproofit
-			.registerListener(
-					"option_pre_delete",
-					function() {
-						$(
-								"#spi-side-action-favoriting-counter")
-								.text(
-										socialproofit
-												.listOptions().length - 1);
-					});
+socialproofit.registerListener("option_pre_delete", function() {
+	$("#spi-side-action-favoriting-counter").text(
+			socialproofit.listOptions().length - 1);
+});
 
 (function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -365,18 +340,14 @@
 
 window.twttr = (function(d, s, id) {
 	var t, js, fjs = d.getElementsByTagName(s)[0];
+	t= null;
 	if (d.getElementById(id))
 		return;
 	js = d.createElement(s);
 	js.id = id;
 	js.src = "//platform.twitter.com/widgets.js";
 	fjs.parentNode.insertBefore(js, fjs);
-	return window.twttr || (t = {
-		_e : [],
-		ready : function(f) {
-			t._e.push(f)
-		}
-	});
+	return window.twttr || (t = {_e : [],ready : function(f) { t._e.push(f);}	});
 }(document, "script", "twitter-wjs"));
 
 (function() {
@@ -415,7 +386,6 @@ if (window.twttr) {
 	});
 }
 
-
 (function() {
 
 	var $ = socialproofit.$;
@@ -426,32 +396,25 @@ if (window.twttr) {
 			.registerListener(
 					"question_in_progress",
 					function(response) {
-						document
-								.getElementById("socialproofit-question-error").style.display = "block";
+						document.getElementById("socialproofit-question-error").style.display = "block";
 					});
 
-	socialproofit
-			.registerListener(
-					"component_init",
-					function(data) {
+	socialproofit.registerListener("component_init", function(data) {
 
-						data.wrapedElement.parentElement.style.position = 'relative';
-						data.wrapedElement.parentElement.style.display = 'inline-block';
-						data.wrapedElement.parentElement
-								.appendChild(data.heartComponent);
-						data.wrapedElement.parentElement
-								.appendChild(data.arrowComponent);
+		data.wrapedElement.parentElement.style.position = 'relative';
+		data.wrapedElement.parentElement.style.display = 'inline-block';
+		data.wrapedElement.parentElement.appendChild(data.heartComponent);
+		data.wrapedElement.parentElement.appendChild(data.arrowComponent);
 
-						if (!data.isAlreadyAdded)
-							data.heartComponent.title = 'Add to your favorites';
-						else
-							data.heartComponent.title = 'Remove from your favorites';
+		if (!data.isAlreadyAdded)
+			data.heartComponent.title = 'Add to your favorites';
+		else
+			data.heartComponent.title = 'Remove from your favorites';
 
-						data.arrowComponent.title = 'Ask friends';
-					});
+		data.arrowComponent.title = 'Ask friends';
+	});
 
-	socialproofit.registerListener("option_send_friend", function(
-			tag) {
+	socialproofit.registerListener("option_send_friend", function(tag) {
 
 		var data = socialproofit.getComponentData(tag);
 		socialproofit.oneItemWidget(data, function() {
@@ -470,8 +433,7 @@ if (window.twttr) {
 
 	function setProduct(product, data) {
 
-		product.setAttribute("id", "spi-img-product-"
-				+ data.option.tag);
+		product.setAttribute("id", "spi-img-product-" + data.option.tag);
 
 		var link = createElement("a", {
 			"href" : data.option.detail_page
@@ -496,35 +458,28 @@ if (window.twttr) {
 			"class" : "spi-img-close-btn"
 		});
 
-		socialproofit.utils.addEvent(closeBtn, "click", function(
-				event) {
+		socialproofit.utils.addEvent(closeBtn, "click", function(event) {
 			socialproofit.deleteEvent(event, data.option.tag);
 		});
 
-		socialproofit.utils.addEvent(sendBtn, "click", function(
-				event) {
-			socialproofit
-					.oneItemWidgetEvent(event, data.option.tag);
-		})
+		socialproofit.utils.addEvent(sendBtn, "click", function(event) {
+			socialproofit.oneItemWidgetEvent(event, data.option.tag);
+		});
 
-		socialproofit.utils.addEvent(sendBtn, "mouseover",
-				function(event) {
-					socialproofit.dispatchEvent(
-							'on_mouse_over_send_item', {
-								isOnElement : true,
-								tag : data.option.tag,
-								title : data.option.title
-							})
-				});
+		socialproofit.utils.addEvent(sendBtn, "mouseover", function(event) {
+			socialproofit.dispatchEvent('on_mouse_over_send_item', {
+				isOnElement : true,
+				tag : data.option.tag,
+				title : data.option.title
+			});
+		});
 
-		socialproofit.utils.addEvent(sendBtn, "mouseout", function(
-				event) {
-			socialproofit.dispatchEvent('on_mouse_over_send_item',
-					{
-						isOnElement : false,
-						tag : data.option.tag,
-						title : data.option.title
-					})
+		socialproofit.utils.addEvent(sendBtn, "mouseout", function(event) {
+			socialproofit.dispatchEvent('on_mouse_over_send_item', {
+				isOnElement : false,
+				tag : data.option.tag,
+				title : data.option.title
+			});
 		});
 
 		tooltip.appendChild(innerTooltip);
@@ -540,11 +495,9 @@ if (window.twttr) {
 	function checkCurrentItem(checked) {
 
 		if (checked) {
-			$("#spi-side-action-shortlist-check").attr("checked",
-					false);
+			$("#spi-side-action-shortlist-check").attr("checked", false);
 		} else {
-			$("#spi-side-action-shortlist-check").attr("checked",
-					true);
+			$("#spi-side-action-shortlist-check").attr("checked", true);
 		}
 	}
 
@@ -570,19 +523,17 @@ if (window.twttr) {
 			var data = components[i].getData();
 
 			if (option.tag == data.tag) {
-				return $("img[src='" + components[i].getRealImage()
-						+ "']");
+				return $("img[src='" + components[i].getRealImage() + "']");
 			}
 		}
 	}
 
 	function fliyngImage(data, destination, isMinimized, callback) {
-
 		var realImage = null;
-		realImage = getImage(data.option)
+		realImage = getImage(data.option);
 
-		if (!realImage || realImage.length == 0
-				|| destination.length == 0 || isMinimized) {
+		if (!realImage || realImage.length == 0 || destination.length == 0
+				|| isMinimized) {
 			callback();
 			return;
 		}
@@ -625,18 +576,16 @@ if (window.twttr) {
 	}
 
 	socialproofit.removeListener("option_created");
-	socialproofit.registerListener("option_created",
-			function(data) {
+	socialproofit.registerListener("option_created", function(data) {
 
-				if (data.is_new_version && data.list.id) {
+		if (data.is_new_version && data.list.id) {
 
-					selectList(data.list);
-					$("#spi-list-ul").append(data.list_html);
-				}
-			});
+			selectList(data.list);
+			$("#spi-list-ul").append(data.list_html);
+		}
+	});
 
-	socialproofit.registerListener("option_pre_create", function(
-			data) {
+	socialproofit.registerListener("option_pre_create", function(data) {
 
 		$("#socialproofit_ask_widget").show();
 
@@ -646,21 +595,18 @@ if (window.twttr) {
 			return;
 
 		var isMinimized = socialproofit.isMinimized();
-		if (!isMinimized) {
-			var product = $(".spi-item-img:visible").children().eq(
-					0);
-		} else {
-			var product = $(".spi-item-img").children().eq(0);
-		}
+//		if (!isMinimized) {
+//			var product = $(".spi-item-img:visible").children().eq(0);
+//		} else {
+//			var product = $(".spi-item-img").children().eq(0);
+//		}
 
 		function isAdded(data) {
 
-			var items = $("#spi-items-carousel .spi-item-img")
-					.children();
+			var items = $("#spi-items-carousel .spi-item-img").children();
 
 			for ( var i = 0; i < items.length; i++) {
-				if ($(items[i]).attr("id") == "spi-img-product-"
-						+ data.tag)
+				if ($(items[i]).attr("id") == "spi-img-product-" + data.tag)
 					return true;
 			}
 			return false;
@@ -690,8 +636,8 @@ if (window.twttr) {
 				} else {
 
 					if (!isMinimized) {
-						$(".spi-item-img:visible").children()
-								.eq(-1).parent().hide();
+						$(".spi-item-img:visible").children().eq(-1).parent()
+								.hide();
 					} else {
 						socialproofit.slider.refresh(true);
 					}
@@ -706,81 +652,65 @@ if (window.twttr) {
 			data.component.title = 'Remove from your favorites';
 	});
 
-	socialproofit
-			.registerListener(
-					"option_pre_delete",
-					function(data) {
+	socialproofit.registerListener("option_pre_delete", function(data) {
 
-						checkCurrentItem(true);
+		checkCurrentItem(true);
 
-						var product = $("#spi-img-product-"
-								+ data.tag);
-						var parent = product.parent();
-						var container = parent.parent();
+		var product = $("#spi-img-product-" + data.tag);
+		var parent = product.parent();
+		var container = parent.parent();
 
-						parent
-								.fadeOut(
-										"slow",
-										function() {
+		parent.fadeOut("slow", function() {
 
-											parent.remove();
-											var childs = container[0].children.length;
+			parent.remove();
+			var childs = container[0].children.length;
 
-											if (childs < socialproofit.slider.MAX_ITEMS) {
-												for ( var i = childs; i < socialproofit.slider.MAX_ITEMS; i++) {
-													createContainer(container[0]);
-												}
-											} else {
-												socialproofit.slider
-														.checkVisibles();
-											}
+			if (childs < socialproofit.slider.MAX_ITEMS) {
+				for ( var i = childs; i < socialproofit.slider.MAX_ITEMS; i++) {
+					createContainer(container[0]);
+				}
+			} else {
+				socialproofit.slider.checkVisibles();
+			}
 
-											socialproofit.slider
-													.checkLength();
-										});
+			socialproofit.slider.checkLength();
+		});
 
-						if (data.component)
-							data.component.title = 'Add to your favorites';
-					});
+		if (data.component)
+			data.component.title = 'Add to your favorites';
+	});
 
-	socialproofit.registerListener("show_hide_widget", function(
-			data) {
+	socialproofit.registerListener("show_hide_widget", function(data) {
 
-		// if (data.productsQuantity == 0 && socialproofit.listOptions().length == 0) {
-		//     $("#socialproofit_ask_widget").hide();
+		// if (data.productsQuantity == 0 && socialproofit.listOptions().length
+		// == 0) {
+		// $("#socialproofit_ask_widget").hide();
 		// }
 	});
 
-	socialproofit
-			.registerListener(
-					"on_mouse_over_send_item",
-					function(data) {
+	socialproofit.registerListener("on_mouse_over_send_item", function(data) {
 
-						var component = document
-								.getElementById("spi-tooltip-"
-										+ data.tag);
-						var className = " spi-tp-send-item";
-						if (!component)
-							return;
-						if (data.isOnElement) {
+		var component = document.getElementById("spi-tooltip-" + data.tag);
+		var className = " spi-tp-send-item";
+		if (!component)
+			return;
+		if (data.isOnElement) {
 
-							component.textContent = "Send to Friend";
+			component.textContent = "Send to Friend";
 
-							if (component.className
-									.indexOf(className) == -1) {
-								component.className += className;
-							}
-						} else {
-							component.textContent = data.title;
-							component.className = component.className
-									.replace(className, "");
-						}
+			if (component.className.indexOf(className) == -1) {
+				component.className += className;
+			}
+		} else {
+			component.textContent = data.title;
+			component.className = component.className.replace(className, "");
+		}
 
-						var arrow = createElement("span", {
-							"class" : "spi-tooltip-arrow"
-						});
-						component.appendChild(arrow);
-					});
+		var arrow = createElement("span", {
+			"class" : "spi-tooltip-arrow"
+		});
+		component.appendChild(arrow);
+	});
 
 	function selectList(data) {
 
@@ -869,26 +799,22 @@ if (window.twttr) {
 		$("#spi-list-ul").append(data.html);
 	});
 
-	socialproofit.registerListener("list_edit_started", function(
-			data) {
+	socialproofit.registerListener("list_edit_started", function(data) {
 
 		$("#spi-list-item-" + data.id).hide();
 		$("#spi-edit-list-name-" + data.id).show();
 	});
 
-	socialproofit.registerListener("option_pre_create", function(
-			data) {
+	socialproofit.registerListener("option_pre_create", function(data) {
 		$("#spi-lists").show();
 		$("#spi-send-question").show();
 	});
 
-	socialproofit.registerListener("init_product_page", function(
-			data) {
+	socialproofit.registerListener("init_product_page", function(data) {
 
-		//$("#spi-side-action-shortlist").show();
+		// $("#spi-side-action-shortlist").show();
 		if (socialproofit.isCurrentItemAdded()) {
-			$("#spi-side-action-shortlist-check").attr("checked",
-					true);
+			$("#spi-side-action-shortlist-check").attr("checked", true);
 		}
 
 		if (!socialproofit.isCurrentItemAdded()) {
@@ -928,20 +854,20 @@ if (window.twttr) {
 	});
 
 	function showHideUI(init, data) {
-
 		if (!init) {
 			options = true;
 			$("#socialproofit_ask_widget").show();
 
-		} else {
-			if (data) {
-				var options = data.has_products;
-			} else {
-				var options = socialproofit.listOptions().length > 0;
-			}
-		}
+		} 
+//		else {
+//			if (data) {
+//				var options = data.has_products;
+//			} else {
+//				var options = socialproofit.listOptions().length > 0;
+//			}
+//		}
 
-		//socialproofit.dispatchEvent('showEducational');
+		// socialproofit.dispatchEvent('showEducational');
 		socialproofit.dispatchEvent('showSocial');
 	}
 
@@ -965,7 +891,7 @@ if (window.twttr) {
 				"-webkit-transform" : "scale(" + deviceScale + ")",
 				"-moz-transform" : "scale(" + deviceScale + ")",
 				"msTransform" : "scale(" + deviceScale + ")"
-			}
+			};
 
 			widget.css(css);
 
@@ -975,116 +901,122 @@ if (window.twttr) {
 		}
 	}
 
-	socialproofit.registerListener("widget_initialized", function(
-			params) {
+	socialproofit
+			.registerListener("widget_initialized",
+					function(params) {
 
-		var labelText0 = 'Add to shortlist';
-		var labelText1 = 'Added to shortlist';
+						var labelText0 = 'Add to shortlist';
+						var labelText1 = 'Added to shortlist';
 
-		socialproofit.history.initializeHistory(labelText0,
-				labelText1);
+						socialproofit.history.initializeHistory(labelText0,
+								labelText1);
 
-		// Placeholder - multiple lists
-		$('.spi-placeholder').each(function(i) {
+						// Placeholder - multiple lists
+						$('.spi-placeholder').each(function(i) {
 
-			var item = $(this);
-			var text = item.attr('rel');
-			var form = item.parents('form:first');
+							var item = $(this);
+							var text = item.attr('rel');
+							var form = item.parents('form:first');
 
-			if (item.val() === '') {
-				item.val(text);
-				item.css('color', '#888');
-				item.css('font-style', 'italic');
-			}
-			item.bind('focus.placeholder', function(event) {
+							if (item.val() === '') {
+								item.val(text);
+								item.css('color', '#888');
+								item.css('font-style', 'italic');
+							}
+							item.bind('focus.placeholder', function(event) {
 
-				if (item.val() === text)
-					item.val('');
+								if (item.val() === text)
+									item.val('');
 
-				item.css('color', '');
-				item.css('font-style', 'normal');
-			});
+								item.css('color', '');
+								item.css('font-style', 'normal');
+							});
 
-			item.bind('blur.placeholder', function(event) {
+							item.bind('blur.placeholder', function(event) {
 
-				if (item.val() === '') {
-					item.val(text);
-					item.css('color', '#888');
-					item.css('font-style', 'italic');
-				}
-			});
+								if (item.val() === '') {
+									item.val(text);
+									item.css('color', '#888');
+									item.css('font-style', 'italic');
+								}
+							});
 
-			form.bind("submit.placeholder", function(event) {
-				if (item.val() === text)
-					item.val("");
-			});
-		});
+							form.bind("submit.placeholder", function(event) {
+								if (item.val() === text)
+									item.val("");
+							});
+						});
 
-		//Multiple lists combo        
-		$("#spi-lists-combo").bind("click", function() {
-			$("#spi-lists-menu").show();
-			resetErrors();
-		});
-		$("#spi-lists-current").bind("click", function() {
-			$("#spi-lists-menu").hide();
-			resetErrors();
-		});
+						// Multiple lists combo
+						$("#spi-lists-combo").bind("click", function() {
+							$("#spi-lists-menu").show();
+							resetErrors();
+						});
+						$("#spi-lists-current").bind("click", function() {
+							$("#spi-lists-menu").hide();
+							resetErrors();
+						});
 
-		if ($("#spi-list-ul").children().length / 2 >= 2) {
-			$("#spi-lists-note").hide();
-		}
+						if ($("#spi-list-ul").children().length / 2 >= 2) {
+							$("#spi-lists-note").hide();
+						}
 
-		//scale();
+						// scale();
 
-		function resetErrors() {
-			$("#spi-list-delete-error").hide();
-			$("#spi-list-create-error").hide();
-		}
+						function resetErrors() {
+							$("#spi-list-delete-error").hide();
+							$("#spi-list-create-error").hide();
+						}
 
-		if (location.pathname == "/"
-				&& socialproofit.listOptions().length == 0) {
-			$("#socialproofit_ask_widget").hide();
-		}
+						if (location.pathname == "/"
+								&& socialproofit.listOptions().length == 0) {
+							$("#socialproofit_ask_widget").hide();
+						}
 
-		var adding = false;
+						var adding = false;
 
-		$('#spi-side-action-shortlist-check').change(function() {
+						$('#spi-side-action-shortlist-check').change(
+								function() {
 
-			if (adding)
-				return;
-			adding = true;
+									if (adding)
+										return;
+									adding = true;
 
-			var data = socialproofit.getPageOption().getData();
+									var data = socialproofit.getPageOption()
+											.getData();
 
-			if (!socialproofit.isOptionAlreadyAdded(data.tag)) {
-				socialproofit.addOption(data, function() {
-					adding = false;
-				});
-			} else {
-				socialproofit.deleteOption(data.tag, function() {
-					adding = false;
-				});
-			}
+									if (!socialproofit
+											.isOptionAlreadyAdded(data.tag)) {
+										socialproofit.addOption(data,
+												function() {
+													adding = false;
+												});
+									} else {
+										socialproofit.deleteOption(data.tag,
+												function() {
+													adding = false;
+												});
+									}
 
-			return false;
-		});
+									return false;
+								});
 
-		$("#spi-educational-btn a").click(function() {
+						$("#spi-educational-btn a").click(function() {
 
-			if (adding)
-				return;
-			adding = true;
+							if (adding)
+								return;
+							adding = true;
 
-			var data = socialproofit.getPageOption().getData();
+							var data = socialproofit.getPageOption().getData();
 
-			socialproofit.addOption(data, function() {
-				adding = false;
-			});
-		});
+							socialproofit.addOption(data, function() {
+								adding = false;
+							});
+						});
 
-		normalizeMainActionWidth();
-		$(window).resize(normalizeMainActionWidth);
-	});
+						normalizeMainActionWidth();
+						$(window).resize(normalizeMainActionWidth);
+					});
 
 	function normalizeMainActionWidth() {
 
@@ -1111,4 +1043,3 @@ if (window.twttr) {
 
 			});
 })();
-
