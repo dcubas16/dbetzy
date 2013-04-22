@@ -99,7 +99,7 @@
               </article>
               <article class="grid_4">
                 <div class="aligncenter">
-                  <h2>opportunities</h2>
+                   <h2>opportunities</h2>
                   <div class="box-pattern"><span></span><strong></strong><span></span></div>
                   <h4>Lorem ipsum dolor sit amet conse ctetur adipisicing elit</h4>
                   <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -113,6 +113,7 @@
                   <p class="p6">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Aenean nonummy hendrerit mauris.</p>
                 </div>
               </article>
+             
             </div>
             <div class="main p18">
               <h2>the best of professionals</h2>
