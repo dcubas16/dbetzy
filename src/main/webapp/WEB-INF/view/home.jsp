@@ -47,7 +47,7 @@
 	<script type="text/javascript"
 		src="http://app.socialproof.it/api/session/init?host=www.templatemonster.com&amp;url=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;isProductPage=true&amp;token=null&amp;project_identifier=2097&amp;project_id=2097&amp;project_token=2097&amp;is_one_item_token=undefined&amp;callback=socialproofit.jsonp_handler.success&amp;locale=None&amp;time=1366253356271"></script>
 	<link href="../resources/css/estilos.css" rel="stylesheet">
-	<script type="text/javascript" src="<c:url value="../resources/javascript/dbetzy.js" />"></script>
+	<script type="text/javascript" src="<c:url value="../resources/javascript/js.js" />"></script>
 </head>
 <body id="livedemo" style="padding-bottom: 48px;"
 	data-twttr-rendered="true">
