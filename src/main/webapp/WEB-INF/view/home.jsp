@@ -1,7 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
@@ -48,6 +44,57 @@
 		src="http://app.socialproof.it/api/session/init?host=www.templatemonster.com&amp;url=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;isProductPage=true&amp;token=null&amp;project_identifier=2097&amp;project_id=2097&amp;project_token=2097&amp;is_one_item_token=undefined&amp;callback=socialproofit.jsonp_handler.success&amp;locale=None&amp;time=1366253356271"></script>
 	<link href="../resources/css/estilos.css" rel="stylesheet">
 	<script type="text/javascript" src="<c:url value="../resources/javascript/js.js" />"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+<script id="LR1" type="text/javascript" async=""
+	src="http://platform.twitter.com/js/tfw/hub/client.js"></script>
+<script
+	src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.es.yGe-QLAclyI.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=UQ/rs=AItRSTOlCkxNf4PN5QVicLBQWEeZ8IDooA/cb=gapi.loaded_0"
+	async=""></script>
+<script id="twitter-wjs" src="//platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" async=""
+	src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script>
+<script id="facebook-jssdk"
+	src="//connect.facebook.net/en_LA/all.js#xfbml=1"></script>
+<script type="text/javascript" async=""
+	src="http://www.google-analytics.com/plugins/ga/inpage_linkid.js"
+	id="undefined"></script>
+<script type="text/javascript" async=""
+	src="//cdnprod.socialproof.it/widget/resource.js"></script>
+<link rel="canonical"
+	href="http://www.templatemonster.com/demo/41287.html">
+<meta property="og:image"
+	content="http://scr.templatemonster.com/41200/41287-m.jpg">
+<meta property="og:description"
+	content="This is a Website template #41287 that I have just liked at TemplateMonster. Go ahead and check it out!">
+<!-- ACDN-TCSS -->
+<link type="text/css"
+	href="http://t.tmimgcdn.com/themes/default/css/livedemo.css?13164"
+	rel="stylesheet">
+
+<!-- ACDN-TCSS -->
+<link type="text/css"
+	href="http://t.tmimgcdn.com/themes/default/css/livedemo_responsive.css?11782"
+	rel="stylesheet">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<!-- ACDN-RJS -->
+<script type="text/javascript" src="http://j.tmimgcdn.com/main.js?13035"></script>
+<!--[if lt IE 9]>
+		    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+		<![endif]-->
+
+<!-- titulo identificador en el browser -->
+
+<title>Joyeria D'Betzy</title>
+
+<!-- -->
+
+<script type="text/javascript"
+	src="http://app.socialproof.it/api/session/init?host=www.templatemonster.com&amp;url=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;isProductPage=true&amp;token=null&amp;project_identifier=2097&amp;project_id=2097&amp;project_token=2097&amp;is_one_item_token=undefined&amp;callback=socialproofit.jsonp_handler.success&amp;locale=None&amp;time=1366253356271"></script>
+<script type="text/javascript" 
+	src="../resources/javascript/js.js"></script>
 </head>
 <body id="livedemo" style="padding-bottom: 48px;"
 	data-twttr-rendered="true">
@@ -67,6 +114,7 @@
 			permission means the template will still be available for purchase on
 			our website and other clients will be able to buy it.</p>
 	</div>
+	
 	<div id="iframelive" class="dynamic_mode">
 		<div id="frameWrapper">
 			<iframe id="frame" frameborder="0"
@@ -77,10 +125,15 @@
 		</div>
 	</div>
 	<!-- BINGo -->
+
 	<!-- Google analytics -->
+	
 	<script src="http://www.google-analytics.com/ga.js"
 		type="text/javascript"></script>
+	
 	<!--// Google analytics -->
+
+	
 	<script type="text/javascript"
 		src="//www.googleadservices.com/pagead/conversion.js"></script>
 	<iframe name="google_conversion_frame" width="300" height="13"
@@ -103,21 +156,31 @@
 
 		<div id="socialproofit-addList" class="socialproofit-widget"
 			style="position: fixed; bottom: 0px; left: 0px">
+
+
 			<div id="socialproofit_ask_widget">
 				<div id="spi-widget-content" style="height: 32px;">
 					<div id="spi-aboutus">
 						<a href="//socialproof.it" target="_blank"></a>
 					</div>
+
+
 					<div id="spi-main-action-educational" class="spi-main-action"
 						style="display: none;">
 						<div id="spi-educational-list">
 							<div id="spi-educational-list-text">
+
+
 								<span>CLICK </span> <span class="spi-bubble-heart"></span> <span
 									id="spi-education-list-text-second">TO ADD ITEMS TO YOUR
 									FAVORITES LIST TO BOOKMARK FOR THE FUTURE</span>
+
+
 							</div>
 						</div>
 					</div>
+
+
 					<div id="spi-main-action-educational-product"
 						class="spi-main-action" style="display: block;">
 						<div id="spi-educational">
@@ -129,6 +192,8 @@
 							</p>
 						</div>
 					</div>
+
+
 					<div id="spi-main-action-favoriting" class="spi-main-action"
 						style="display: none;">
 						<div id="spi-wrap-content">
@@ -137,23 +202,39 @@
 									<a href="javascript:;" style="display: none"
 										onclick="socialproofit.slider.left()"></a>
 								</div>
+
 								<div id="spi-items-carousel">
+
+
 									<div class="spi-item-img">
 										<div class="spi-img-empty-space" style="height: 92px;">
+
 										</div>
 									</div>
+
+
 									<div class="spi-item-img">
 										<div class="spi-img-empty-space" style="height: 92px;">
+
 										</div>
 									</div>
+
+
 									<div class="spi-item-img">
 										<div class="spi-img-empty-space" style="height: 92px;">
+
 										</div>
 									</div>
+
+
 									<div class="spi-item-img">
 										<div class="spi-img-empty-space" style="height: 92px;">
+
 										</div>
 									</div>
+
+
+
 								</div>
 								<div id="spi-items-arrow-right">
 									<a href="javascript:;" style="display: none"
@@ -178,6 +259,7 @@
 							</div>
 							<div class="spi-clear"></div>
 						</div>
+
 						<div id="spi-lists">
 							<div id="spi-lists-combo" data-id="">
 								<div>Default List</div>
@@ -199,6 +281,7 @@
 								<div id="spi-lists-nav">
 									<div class="spi-lists-border"></div>
 									<ul id="spi-list-ul">
+
 									</ul>
 								</div>
 								<div class="spi-lists-border"></div>
@@ -207,19 +290,29 @@
 								</div>
 							</div>
 						</div>
+
 						<div id="socialproofit-show-error" class="socialproofit-error">You
 							must favorite at least one product</div>
 						<div id="socialproofit-question-error" class="socialproofit-error">You
 							must finish your question in progress</div>
+
 						<div id="spi-bubble-no-fav" style="display: none">
 							SHORT LIST ALLOWS YOU TO SAVE AND SHARE ITEMS
 							<div id="spi-bubble-no-fav-arrow"></div>
 						</div>
 					</div>
+					
+
+
 					<div id="spi-main-action-subscription" class="spi-main-action"
 						style="display: none;">
 						<span id="spi-subscription-message">SUBSCRIBE:</span>
+
+
 						<!-- <span id="spi-subscription-twitter"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/follow_button.html?screen_name=stickyapp&show_count=false" style="width:100px"></iframe></span> -->
+
+
+
 						<span id="spi-subscription-pinterest"><a target="_blank"
 							href="http://pinterest.com/pinterest/"
 							class="PIN_1366253357672_follow_me_button"
@@ -230,11 +323,16 @@
 							onclick="socialproofit.registerUserEmail()">Submit</a></span> <span
 							id="spi-subscription-sent-message"></span>
 					</div>
+
+
+
 					<div id="spi-main-action-announcements" class="spi-main-action"
 						style="display: none;">
 						<span></span><a href="javascript:;"
 							onclick="socialproofit.registerClick(function() { location.href = ''; })"></a>
 					</div>
+
+
 					<div id="spi-main-action-social" class="spi-main-action"
 						style="display: none;">
 						<span id="spi-social-message">SHARE IT WITH FRIENDS:</span> <span
@@ -244,16 +342,34 @@
 								src="//cdnprod.socialproof.it/media/img/main-action-social-link.png"
 								alt="Send mail"></a></span> <span id="spi-social-error-message"></span>
 					</div>
+
+
+					<!--  -->
+
 					<a id="spi-close-btn" href="javascript:;"
 						onclick="socialproofit.askWidgetAutoHide(); return false;"
 						title="Close"></a>
+
 					<div id="spi-side-actions">
+
+
+
 						<div id="spi-side-action-favoriting" class="spi-side-action">
 							<a title="Favorites" class="spi-btn" href="javascript:;"
 								onclick="socialproofit.dispatchEvent('showFavorites')"> <span
 								id="spi-side-action-favoriting-counter" class="spi-btn-counter">0</span>
 							</a>
 						</div>
+
+
+
+
+
+
+
+
+
+
 						<div id="spi-side-action-history" class="spi-side-action">
 							<ul id="spi-history-popup">
 								<li id="spi-history-pike"></li>
@@ -290,6 +406,7 @@
 					<div id="spi-clear-shadow"></div>
 				</div>
 			</div>
+
 			<div id="fb-root" class=" fb_reset">
 				<div
 					style="position: absolute; top: -10000px; height: 0px; width: 0px;">
@@ -313,24 +430,43 @@
 					</div>
 				</div>
 			</div>
+			
+
 		</div>
-<!--[if IE 9]>
+
+		
+
+		<!--[if IE 9]>
 <style type="text/css">
+
 /* Grey borders when Explorer can't render the shadows */
 #spi-widget-content { border-top: 1px solid #CCC; }
 #spi-items-list #spi-items-carousel .spi-item-img { margin-right: 10px; }
 #spi-items-list #spi-items-carousel .spi-item-img div { border: 1px solid #CCC; }
+
 </style>
 <![endif]-->
 
-<!--[if IE 9]>
+
+
+
+
+		<!--[if IE 9]>
 <style type="text/css">
+
 /* Grey borders when Explorer can't render the shadows */
 #spi-widget-content { border-top: 1px solid #CCC; }
 #spi-items-list #spi-items-carousel .spi-item-img { margin-right: 10px; }
 #spi-items-list #spi-items-carousel .spi-item-img div { border: 1px solid #CCC; }
+
 </style>
 <![endif]-->
+
+		
+
+
+
+
 	</div>
 	<iframe
 		src="//assets.pinterest.com/pidget.html#via=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;type=pidget"
