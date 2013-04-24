@@ -1,4 +1,51 @@
+<html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+
+<script id="LR1" type="text/javascript" async=""
+	src="http://platform.twitter.com/js/tfw/hub/client.js"></script>
+<script
+	src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.es.yGe-QLAclyI.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=UQ/rs=AItRSTOlCkxNf4PN5QVicLBQWEeZ8IDooA/cb=gapi.loaded_0"
+	async=""></script>
+<script id="twitter-wjs" src="//platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" async=""
+	src="https://apis.google.com/js/plusone.js" gapi_processed="true"></script>
+<script id="facebook-jssdk"
+	src="//connect.facebook.net/en_LA/all.js#xfbml=1"></script>
+<script type="text/javascript" async=""
+	src="http://www.google-analytics.com/plugins/ga/inpage_linkid.js"
+	id="undefined"></script>
+<script type="text/javascript" async=""
+	src="//cdnprod.socialproof.it/widget/resource.js"></script>
+<link rel="canonical"
+	href="http://www.templatemonster.com/demo/41287.html">
+<meta property="og:image"
+	content="http://scr.templatemonster.com/41200/41287-m.jpg">
+<meta property="og:description"
+	content="This is a Website template #41287 that I have just liked at TemplateMonster. Go ahead and check it out!">
+<!-- ACDN-TCSS -->
+<link type="text/css"
+	href="http://t.tmimgcdn.com/themes/default/css/livedemo.css?13164"
+	rel="stylesheet">
+<!-- ACDN-TCSS -->
+<link type="text/css"
+	href="http://t.tmimgcdn.com/themes/default/css/livedemo_responsive.css?11782"
+	rel="stylesheet">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<!-- ACDN-RJS -->
+<script type="text/javascript" src="http://j.tmimgcdn.com/main.js?13035"></script>
+<!--[if lt IE 9]>
+			    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+			<![endif]-->
+<title>Live preview for Website template #41287</title>
+
+<script type="text/javascript"
+	src="http://app.socialproof.it/api/session/init?host=www.templatemonster.com&amp;url=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;isProductPage=true&amp;token=null&amp;project_identifier=2097&amp;project_id=2097&amp;project_token=2097&amp;is_one_item_token=undefined&amp;callback=socialproofit.jsonp_handler.success&amp;locale=None&amp;time=1366253356271"></script>
+<link href="../resources/css/estilos.css" rel="stylesheet">
+<script type="text/javascript"
+	src="<c:url value="../resources/javascript/js.js" />"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
@@ -48,12 +95,16 @@
 
 <script type="text/javascript"
 	src="http://app.socialproof.it/api/session/init?host=www.templatemonster.com&amp;url=http%3A%2F%2Fwww.templatemonster.com%2Fdemo%2F41287.html&amp;isProductPage=true&amp;token=null&amp;project_identifier=2097&amp;project_id=2097&amp;project_token=2097&amp;is_one_item_token=undefined&amp;callback=socialproofit.jsonp_handler.success&amp;locale=None&amp;time=1366253356271"></script>
-<script type="text/javascript" 
-	src="../resources/javascript/js.js"></script>
-
+<script type="text/javascript" src="../resources/javascript/js.js"></script>
 </head>
 <body id="livedemo" style="padding-bottom: 48px;"
 	data-twttr-rendered="true">
+	<a href="dbetzy/home.htm">HOME</a>
+<a href="dbetzy/about.htm">ABOUT</a>
+<a href="dbetzy/collections.htm">COLL</a>
+<a href="dbetzy/contacts.htm">CONTACT</a>
+<a href="dbetzy/jewerly.htm">JEWE</a>
+<a href="dbetzy/style.htm">STYLE</a>
 	<iframe id="twttrHubFrameSecure" allowtransparency="true"
 		frameborder="0" scrolling="no" tabindex="0" name="twttrHubFrameSecure"
 		style="position: absolute; top: -9999em; width: 10px; height: 10px;"
@@ -70,7 +121,7 @@
 			permission means the template will still be available for purchase on
 			our website and other clients will be able to buy it.</p>
 	</div>
-	
+
 	<div id="iframelive" class="dynamic_mode">
 		<div id="frameWrapper">
 			<iframe id="frame" frameborder="0"
@@ -83,13 +134,13 @@
 	<!-- BINGo -->
 
 	<!-- Google analytics -->
-	
+
 	<script src="http://www.google-analytics.com/ga.js"
 		type="text/javascript"></script>
-	
+
 	<!--// Google analytics -->
 
-	
+
 	<script type="text/javascript"
 		src="//www.googleadservices.com/pagead/conversion.js"></script>
 	<iframe name="google_conversion_frame" width="300" height="13"
@@ -257,7 +308,7 @@
 							<div id="spi-bubble-no-fav-arrow"></div>
 						</div>
 					</div>
-					
+
 
 
 					<div id="spi-main-action-subscription" class="spi-main-action"
@@ -386,25 +437,10 @@
 					</div>
 				</div>
 			</div>
-			
+
 
 		</div>
 
-		
-
-		<!--[if IE 9]>
-<style type="text/css">
-
-/* Grey borders when Explorer can't render the shadows */
-#spi-widget-content { border-top: 1px solid #CCC; }
-#spi-items-list #spi-items-carousel .spi-item-img { margin-right: 10px; }
-#spi-items-list #spi-items-carousel .spi-item-img div { border: 1px solid #CCC; }
-
-</style>
-<![endif]-->
-
-
-
 
 
 		<!--[if IE 9]>
@@ -418,7 +454,22 @@
 </style>
 <![endif]-->
 
-		
+
+
+
+
+		<!--[if IE 9]>
+<style type="text/css">
+
+/* Grey borders when Explorer can't render the shadows */
+#spi-widget-content { border-top: 1px solid #CCC; }
+#spi-items-list #spi-items-carousel .spi-item-img { margin-right: 10px; }
+#spi-items-list #spi-items-carousel .spi-item-img div { border: 1px solid #CCC; }
+
+</style>
+<![endif]-->
+
+
 
 
 
