@@ -98,7 +98,7 @@
                   <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. </p>
                 </div>
               </article>
-              <article class="grid_4">
+             <!--  <article class="grid_4">
                 <div class="aligncenter">
                    <h2>opportunities</h2>
                   <div class="box-pattern"><span></span><strong></strong><span></span></div>
@@ -113,8 +113,7 @@
                   </ul>
                   <p class="p6">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Aenean nonummy hendrerit mauris.</p>
                 </div>
-              </article>
-             
+              </article> -->
             </div>
             <div class="main p18">
               <h2>the best of professionals</h2>
