@@ -30,7 +30,7 @@ public class MainController {
 	@RequestMapping(value="contacts.htm", method=RequestMethod.GET )
 	public String contacts(Model model)
 	{
-		return "home";
+		return "contacts";
 	}
 	
 	@RequestMapping(value="jewerly.htm", method=RequestMethod.GET )

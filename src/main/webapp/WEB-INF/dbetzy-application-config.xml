@@ -22,10 +22,13 @@
 
 	<!-- Configures the annotation-driven Spring MVC Controller programming model.
 	Note that, with Spring 3.0, this tag works in Servlet MVC only!  -->
-	<mvc:resources mapping="/resources/**" location="/resources/" /> 
- 	<mvc:annotation-driven /> 
+	<mvc:annotation-driven /> 
+	
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" /> 
+ 	
  	
  	<!-- Imports logging configuration -->
 	<import resource="trace-context.xml"/>
+
 	
 </beans>

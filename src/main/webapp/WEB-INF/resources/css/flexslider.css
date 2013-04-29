@@ -1,0 +1,35 @@
+
+.flexslider .slides > li {display: none;position:relative} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flex-pauseplay span {text-transform: capitalize;}
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+.flexslider {
+	margin:0 ;
+	position: relative;background:#151516}
+
+/* Control Nav */
+
+.flex-direction-nav{display:none}
+.flex-control-nav{position:absolute;bottom:44px;z-index:80;left:50%;overflow:hidden;margin-left:-33px}
+.flex-control-nav li{float:left;margin:0 5px;overflow:hidden}
+.flex-control-nav li a{width:12px;height:12px;background:url(../images/pags.png) no-repeat 0 0;overflow:hidden;text-indent:-1000px;display:block;font-size:0;line-height:0;}
+.flex-control-nav li a:hover,.flex-control-nav li a.flex-active  {background-position: 0 bottom}
+	
+@media only screen and (min-width: 768px) and (max-width: 995px) {
+.flex-caption strong {
+    font-size: 104px;
+    line-height: 108px;
+}
+	
+}
+@media only screen and (max-width: 767px) {
+
+.flex-control-nav {
+    bottom: 17px;
+}
+
+}

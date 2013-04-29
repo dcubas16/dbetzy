@@ -1,0 +1,101 @@
+nav {
+	position:relative;	
+}
+.sf-menu {
+	list-style:none;
+	display:block;
+}
+
+.sf-menu a {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.sf-menu a:hover{text-decoration:none}
+
+.sf-menu > li{	
+	position:relative;
+    float:left;background:url(../images/border-item.png) repeat-y right 0;
+}
+
+.sf-menu > li > a{	
+display:block;
+	color:#f4ddc4;	
+	z-index:10;font-size:17px;line-height:20px;
+	position:relative;
+	padding:14px 31px 18px 30px;font-family:"Times New Roman", Times, serif;
+}
+
+ .sf-menu > li.current>a, .sf-menu > li>a:hover,.sf-menu > li.sfHover > a {color:#fff;text-decoration:none;}
+
+
+/***submenu***/
+.sf-menu ul {
+	position:absolute;
+	top:-999em;
+	z-index:99;
+	width:193px;
+	display:none;
+	padding:0;
+	background:#0d0d0d;
+}
+
+.sf-menu li li {	
+	padding:6px 0 6px 10px;
+	position:relative;	
+	display:block;line-height:16px;border-top:1px solid #2c2d2e;
+}
+.sf-menu li li:first-child{border:none;}
+.sf-menu li li a {
+	display:inline-block;
+	color:#54545e;font-size:12px;font-family:Arial, Helvetica, sans-serif;
+}
+
+.sf-menu li li > a:hover, .sf-menu li li.sfHover > a {
+	color:#f4ddc4
+}
+
+.sf-menu li:hover ul, .sf-menu li.sfHover ul {
+	left:0px;
+	top:53px;
+}
+ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul {
+	top:-999em;
+}
+/***subsubmenu***/
+
+
+ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul {
+	left:112px;
+	top:-10px;
+}
+ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul {
+	top:-999em;
+}
+
+/* Design for a width of 768px */
+@media only screen and (max-width: 995px) {
+	
+}
+@media only screen and (max-width: 767px) {
+nav{padding:12px 6px 12px 12px;}
+nav select {
+    width: 80%;display:inline-block
+}
+nav:before {
+    color: #fff;
+    content: "Menu:";
+    display: inline-block;margin-right:8px;
+    font: 14px/18px Arial,Helvetica,sans-serif;
+    margin-bottom: 5px;font-weight:bold;text-transform:uppercase
+}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	nav select {
+    width: 86%;display:inline-block}
+}
+

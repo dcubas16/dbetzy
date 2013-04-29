@@ -11,5 +11,13 @@
 			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
   
 	<!-- For parsing classes with @Aspect annotation -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
+	<bean id="customizableTraceInterceptor" class="org.dbetzy.aop.TraceInterceptor"
+		p:enterMessage="Entering $[targetClassShortName].$[methodName]($[arguments])"
+		p:exitMessage="Leaving $[targetClassShortName].$[methodName](): $[returnValue]"/>
 
+	<aop:config>
+	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * org.dbetzy.controller..*(..))"/>
+	</aop:config>
 </beans>

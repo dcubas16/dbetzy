@@ -1,43 +1,52 @@
-<html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<html><head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../dbetzy/resources/css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="../dbetzy/resources/css/flexslider.css" type="text/css" media="screen">
+	<link rel="icon" href="../dbetzy/resources/images/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../dbetzy/resources/images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../dbetzy/resources/css/ui.totop.css" type="text/css" media="screen">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+	<script src="../dbetzy/resources/javascript/jquery/jquery-1.7.1.js"></script>
+	<script src="../dbetzy/resources/javascript/superfish.js"></script>
+	<script src="../dbetzy/resources/javascript/jquery/jquery.easing.1.3.js"></script>
+	<script src="../dbetzy/resources/javascript/jquery/jquery.flexslider-min.js"></script>
+	<script src="../dbetzy/resources/javascript/jquery/jquery.ui.totop.js"></script>
+	<script src="../dbetzy/resources/javascript/jquery/jquery.mobilemenu.js"></script>
+	<script src="../dbetzy/resources/javascript/script.js"></script>
+	<script>
+		$(function(){
+			$('.flexslider').flexslider({
+				animation: "fade",			
+				slideshow: true,			
+				slideshowSpeed: 7000,
+				animationDuration: 600,
+				prevText: "Previous",
+				nextText: "Next",
+				controlNav: true,
+			});					
+		});
+	</script>
 
-<head>
-
-<title>About</title>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/ui.totop.css" type="text/css" media="screen">
-<script src="js/jquery-1.7.1.min.js"></script>
-<script src="js/superfish.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.ui.totop.js"></script>
-<script src="js/jquery.mobilemenu.js"></script>
-<script src="js/script.js"></script>
-
-<!--[if lt IE 8]>
+	<!--[if lt IE 8]>
       <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
        </a>
      </div>
     <![endif]-->
-<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
    		<script src="js/html5.js"></script>
   		<link rel="stylesheet" href="css/ie.css"> 
 	<![endif]-->
-</head>
-
+	</head>
 <body id="page2">
-
 <div class="bg-main"> 
   <!--======================== header ===========================-->
-
   <header>
-
     <div class="main-1">
       <div class="row-top"> 
         <!--======================== logo ============================-->
@@ -47,7 +56,7 @@
         <!--======================== menu ============================-->
         <nav>
           <ul class="sf-menu responsive-menu sf-js-enabled">
-            <li class="first-item "><a href="index.html">Home</a></li>
+            <li class="first-item"><a href="index.html">Home</a></li>
             <li class="current"><a href="index-1.html" class="sf-with-ul">About<b class="sf-sub-indicator"></b></a>
               <ul style="display: none;">
                 <li><a href="#">Lorem ipsum dolor </a></li>
@@ -98,9 +107,9 @@
                   <p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. </p>
                 </div>
               </article>
-             <!--  <article class="grid_4">
+              <article class="grid_4">
                 <div class="aligncenter">
-                   <h2>opportunities</h2>
+                  <h2>opportunities</h2>
                   <div class="box-pattern"><span></span><strong></strong><span></span></div>
                   <h4>Lorem ipsum dolor sit amet conse ctetur adipisicing elit</h4>
                   <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -113,7 +122,7 @@
                   </ul>
                   <p class="p6">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate. Aenean nonummy hendrerit mauris.</p>
                 </div>
-              </article> -->
+              </article>
             </div>
             <div class="main p18">
               <h2>the best of professionals</h2>
@@ -174,4 +183,6 @@
 </div>
 <div class="box-bottom"></div>
 
-<a href="#" id="toTop" style="margin-right: -37px; right: 50%; display: none;"><span id="toTopHover"></span></a></body></html>
+<a href="#" id="toTop" style="margin-right: -37px; right: 50%; display: none;"><span id="toTopHover"></span></a>
+</body>
+</html>
