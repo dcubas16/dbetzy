@@ -13,4 +13,3 @@
 	<script src="../dbetzy/resources/javascript/jquery/jquery.flexslider-min.js"></script>
 	<script src="../dbetzy/resources/javascript/jquery/jquery.ui.totop.js"></script>
 	<script src="../dbetzy/resources/javascript/jquery/jquery.mobilemenu.js"></script>
-	<script src="../dbetzy/resources/javascript/script.js"></script>
