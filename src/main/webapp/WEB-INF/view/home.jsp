@@ -124,7 +124,7 @@
               <li><a href="index-4.html">Collections</a></li>
               <li><a href="index-5.html">Contacts</a></li>
             </ul>
-        <div class="privacy">Jewelry Brand © 2012 <a href="index-6.html">Privacy Policy</a> &nbsp; <!-- {%FOOTER_LINK} --></div>
+        <div class="privacy">D' Betzy © 2012 <a href="index-6.html">Privacy Policy</a> &nbsp; <!-- {%FOOTER_LINK} --></div>
       </footer>
         </div>
   </div>
