@@ -41,7 +41,7 @@
 					<div class="row-1">
 						<div class="container_12">
 							<div class="wrapper">
-								<article class="grid_4">
+								<article class="grid_6">
 									<div class="aligncenter">
 										<h2>who we are</h2>
 										<div class="box-pattern">
@@ -63,18 +63,16 @@
 											Fusce suscipit varius mi. Cum sociis natoque penatibus.</p>
 									</div>
 								</article>
-								<article class="grid_4">
+								<article class="grid_6">
 									<div class="aligncenter">
 										<h2>what we do</h2>
 										<div class="box-pattern">
 											<span></span><strong></strong><span></span>
 										</div>
-										<h4>Lorem ipsum dolor sit amet</h4>
-										<p>Lorem ipsum dolor sit amet conse ctetur adipisicing
-											elit, sed do eiusmod tempor incididunt ut labore et dolore
-											magna aliqua. Ut enim ad minim veniam, quis nostrud
-											exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat.</p>
+										<h4>"Three generations sparkling hearts"</h4>
+										<p>When mr. Hidalgo decided to joint her mother in the jewerly 
+											bussiness he was just a kid and saw an oportunity to make 
+											extra bucks. 30 years later the entire family .</p>
 										<h4 class="p10">Aenean auctor urna</h4>
 										<p>Aenean nonummy hendrerit mauris. Phasellus porta. Fusce
 											suscarius mi. Cum sociis natoque penatibus et magnis dis
@@ -87,7 +85,7 @@
 											sollicitudin velit sed leo. Ut pharetra augue nec augue.</p>
 									</div>
 								</article>
-								<article class="grid_4">
+								<!-- <article class="grid_4">
 									<div class="aligncenter">
 										<h2>opportunities</h2>
 										<div class="box-pattern">
@@ -112,7 +110,7 @@
 											consequat. Duis aute irure dolor in reprehenderit in
 											voluptate. Aenean nonummy hendrerit mauris.</p>
 									</div>
-								</article>
+								</article> -->
 							</div>
 							<div class="main p18">
 								<h2>the best of professionals</h2>
