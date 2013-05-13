@@ -14,31 +14,31 @@ public class MainController {
 	{
 		return "home";
 	}
-	
+
 	@RequestMapping(value="about.htm", method=RequestMethod.GET )
 	public String about(Model model)
 	{
 		return "about";
 	}
-	
+
 	@RequestMapping(value="collections.htm", method=RequestMethod.GET )
 	public String collections(Model model)
 	{
 		return "collections";
 	}
-	
+
 	@RequestMapping(value="contacts.htm", method=RequestMethod.GET )
 	public String contacts(Model model)
 	{
 		return "contacts";
 	}
-	
+
 	@RequestMapping(value="jewerly.htm", method=RequestMethod.GET )
 	public String jewerly(Model model)
 	{
 		return "jewerly";
 	}
-	
+
 	@RequestMapping(value="style.htm", method=RequestMethod.GET )
 	public String style(Model model)
 	{
